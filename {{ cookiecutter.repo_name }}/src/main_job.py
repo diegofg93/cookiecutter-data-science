@@ -15,9 +15,7 @@ from src import __version__ as _version
 
 import logging
 
-
 _logger = logging.getLogger(__name__)
-
 
 def run_training() -> None:
     """Train the model."""
