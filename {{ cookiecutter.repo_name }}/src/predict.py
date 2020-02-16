@@ -1,3 +1,8 @@
+import sys
+import os
+#add to path to search interpreter parent directory
+sys.path.append(os.path.join(os.path.dirname(__file__), os.pardir))
+
 import numpy as np
 import pandas as pd
 
@@ -18,7 +23,7 @@ _price_pipe = load_pipeline(file_name=pipeline_file_name)
 def make_prediction(*, input_data) -> dict:
     """Make a prediction using the saved model pipeline."""
 
-    data = pd.read_json(input_data)
+    data = pd.DataFrame(input_data)
     validated_data = validate_inputs(input_data=data)
     prediction = _price_pipe.predict(validated_data[config.FEATURES])
     output = np.exp(prediction)
