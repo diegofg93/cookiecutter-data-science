@@ -1,5 +1,5 @@
 ##############################################################################
-# Thats the entrypoint for deploying your machine learning app as a REST api 
+# That's the entrypoint for deploying your machine learning app as a REST api 
 # if you want.
 # For that you have to install the requirements in that package
 # from the parent directory of the package:
@@ -9,9 +9,10 @@
 # That it will install your ml app and all its dependencies besides
 # flask.
 #
-# You can check if everything is ok using the tests
+# You can check if everything is ok using the tests moving to ml_api and 
+# testing with
 #
-#    
+#    $pytest tests
 # 
 # Then move to ml_api directory and introduce:
 #

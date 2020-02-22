@@ -2,7 +2,6 @@ import sys
 import pytest
 import shutil
 from pathlib import Path
-from cookiecutter import main
 
 CCDS_ROOT = Path(__file__).parents[1].resolve()
 
