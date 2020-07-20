@@ -5,6 +5,7 @@ pandas
 yellowbrick
 matplotlib
 seaborn
+dataprep
 
 # packaging
 setuptools==40.6.3

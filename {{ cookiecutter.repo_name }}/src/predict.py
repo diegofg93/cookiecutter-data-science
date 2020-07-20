@@ -1,7 +1,7 @@
 import sys
 import os
 #add to path to search interpreter parent directory
-sys.path.append(os.path.join(os.path.dirname(__file__), os.pardir))
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), os.pardir))
 
 import numpy as np
 import pandas as pd
@@ -11,7 +11,7 @@ from src.config import config, logging_config
 from src.processing.validation import validate_inputs
 from src import __version__ as _version
 
-_logger = logging.getLogger(__name__)
+_logger = logging_config.get_logger(__name__)
 
 pipeline_file_name = f'{config.PIPELINE_SAVE_FILE}{_version}.pkl'
 _price_pipe = load_pipeline(file_name=pipeline_file_name)
