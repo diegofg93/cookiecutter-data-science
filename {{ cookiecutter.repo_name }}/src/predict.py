@@ -7,12 +7,9 @@ import numpy as np
 import pandas as pd
 
 from src.processing.data_management import load_pipeline
-from src.config import config
+from src.config import config, logging_config
 from src.processing.validation import validate_inputs
 from src import __version__ as _version
-
-import logging
-
 
 _logger = logging.getLogger(__name__)
 
