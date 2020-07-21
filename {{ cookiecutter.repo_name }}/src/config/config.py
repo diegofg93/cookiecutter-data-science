@@ -4,7 +4,8 @@ import pathlib
 import src
 
 import pandas as pd
-
+import yaml
+from box import Box
 
 pd.options.display.max_rows = 10
 pd.options.display.max_columns = 10
@@ -14,6 +15,9 @@ PACKAGE_ROOT = pathlib.Path(src.__file__).parent.parent.resolve()
 TRAINED_MODEL_DIR = PACKAGE_ROOT / 'trained_models'
 DATASET_DIR = PACKAGE_ROOT / 'datasets'
 LOG_DIR = PACKAGE_ROOT / 'logs'
+
+with open(str(PACKAGE_ROOT) +"/src/config/external_configs.yml" , "r") as ymlfile:
+    cfg = Box(yaml.safe_load(ymlfile))
 
 # data
 TESTING_DATA_FILE = 'test.csv'

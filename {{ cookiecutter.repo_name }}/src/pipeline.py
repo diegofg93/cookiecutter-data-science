@@ -1,4 +1,4 @@
-from sklearn.linear_model import Lasso
+import importlib
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import MinMaxScaler
 
@@ -11,6 +11,9 @@ import logging
 
 _logger = logging.getLogger(__name__)
 
+Algorithm = getattr(
+    importlib.import_module(config.cfg.train.algorithm_module), config.cfg.train.algorithm_name
+)
 
 price_pipe = Pipeline(
     [
@@ -33,6 +36,6 @@ price_pipe = Pipeline(
         ('drop_features',
             pp.DropUnecessaryFeatures(variables_to_drop=config.DROP_FEATURES)),
         ('scaler', MinMaxScaler()),
-        ('Linear_model', Lasso(alpha=0.005, random_state=0))
+        ('Linear_model', Algorithm(**config.cfg.train.algorithm_params))
     ]
 )

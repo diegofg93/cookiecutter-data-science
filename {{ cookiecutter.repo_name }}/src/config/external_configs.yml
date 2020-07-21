@@ -1,0 +1,24 @@
+base:
+  path:
+    data: "/shared/mydata.csv"
+    logs: "logs"
+    log_config: "adv_ds_logging.yml"
+  rf_params:
+    n_estimators: 400
+
+dev:
+  path_db: "sqlite:////some_dir/dev.db"
+  
+prod:
+  path_db: "sqlite:////some_other_dir/prod.db"
+
+
+train:
+  col_label: "label"
+  cols_to_ignore: ["userid", "date"]
+  
+  algorithm_module: "sklearn.linear_model"
+  algorithm_name: "Lasso"
+  algorithm_params:
+    alpha: 0.005
+    random_state: 42

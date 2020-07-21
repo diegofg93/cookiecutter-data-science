@@ -6,6 +6,8 @@ yellowbrick
 matplotlib
 seaborn
 dataprep
+python-box
+yaml
 
 # packaging
 setuptools==40.6.3
