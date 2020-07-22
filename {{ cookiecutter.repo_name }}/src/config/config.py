@@ -7,8 +7,8 @@ import pandas as pd
 import yaml
 from box import Box
 
-pd.options.display.max_rows = 10
-pd.options.display.max_columns = 10
+pd.options.display.max_rows = 100
+pd.options.display.max_columns = 999
 
 
 PACKAGE_ROOT = pathlib.Path(src.__file__).parent.parent.resolve()
