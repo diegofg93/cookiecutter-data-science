@@ -9,7 +9,7 @@ Project Organization
     ├── LICENSE
     ├── Makefile           <- Makefile with commands like `make data` or `make train`
     ├── README.md          <- The top-level README for developers using this project.
-    ├── data
+    ├── datasets
     │   ├── external       <- Data from third party sources.
     │   ├── interim        <- Intermediate data that has been transformed.
     │   ├── processed      <- The final, canonical data sets for modeling.
@@ -17,7 +17,10 @@ Project Organization
     │
     ├── docs               <- A default Sphinx project; see sphinx-doc.org for details
     │
-    ├── models             <- Trained and serialized models, model predictions, or model summaries
+    │── logs               <- Folder to save logs generated.
+    │
+    │
+    ├── trained_models     <- Trained and serialized models, model predictions, or model summaries
     │
     ├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
     │                         the creator's initials, and a short `-` delimited description, e.g.
@@ -34,22 +37,59 @@ Project Organization
     ├── setup.py           <- makes project pip installable (pip install -e .) so src can be imported
     ├── src                <- Source code for use in this project.
     │   ├── __init__.py    <- Makes src a Python module
+    │   │   
+    │   ├── pipeline.py    <- Contains the configuration of the model pipeline
+    │   ├── train_pipeline.py <- Train and generate the model
+    │   ├── predict.py     <- Use the trained model for predicting data
     │   │
-    │   ├── data           <- Scripts to download or generate data
-    │   │   └── make_dataset.py
+    │   ├── config
+    │   │   ├── config.py   <- Config with basic information as dataset directory.
+    │   │   ├── external_configs.py <- Custom information of the project like databases, or training variables.
+    │   │   └── logging_config.py   <- Configuration of the logger in the package.
     │   │
-    │   ├── features       <- Scripts to turn raw data into features for modeling
-    │   │   └── build_features.py
+    │   ├── processing      <- Module that contains data function.
+    │   │   └── data_management.py <- Contains functions for load data.
+    │   │   ├── errors.py          <- You can generate custom erros in this module.
+    │   │   ├── features.py        <- Module for generating aditional features, contains some advances examples in spark.
+    │   │   ├── preprocessors.py   <- Custom preprocessor often plugin in scikit learn pipeline.
+    │   │   └── validation.py      <- Checker functions for data.
     │   │
-    │   ├── models         <- Scripts to train models and then use trained models to make
-    │   │   │                 predictions
-    │   │   ├── predict_model.py
-    │   │   └── train_model.py
     │   │
-    │   └── visualization  <- Scripts to create exploratory and results oriented visualizations
+    │   ├── models         <- Scripts to train models.
+    │   │   ├── clustering_training.py  <- Class implemented for automatic clustering training.
+    │   │   └── utils_models.py         <- Functions that could be use in several training models.
+    │   │
+    │   └── visualization  <- Scripts to create exploratory and results oriented visualizations.
     │       └── visualize.py
     │
-    └── tox.ini            <- tox file with settings for running tox; see tox.testrun.org
+    │── ml_api        <- Folder with a skeleton for deploy your app with flask.
+    │   ├── __init__.py    <- Makes ml_api a Python module.
+    │   ├── api            <- Folder with the flask app.
+    |   |     ├── __init__.py    <- Makes api a Python module.
+    |   |     ├── app.py         <- Create the flask app.
+    |   |     ├── config.py      <- Configure the logger for the flask app.
+    |   |     ├── controller.py  <- Routes in the flask app.
+    |   |     ├── validation.py  <- Schema validation for the data.
+    │   ├── tests      <- tests for the flask api..
+    |   |     ├── conftest.py           <- Configuration test.
+    |   |     ├── test_controller.py    <- Test check api.
+    |   |     ├── test_validation.py    <- Test for validation input data.
+    │   ├── run.py         <- Run the flask application.
+    │   ├── requirements.txt      <- The requirements for run the flask aplication.
+    │   └── VERSION            <- Version of the api.
+    │
+    │── tests <- folder that contains the test of the code
+    │   ├── test_predict.py    <- Tests for checking the predictions.
+    │
+    │── test_environment.py <- Check environments configurations.
+    │
+    │── .env        <- You can add environment variables and load with python-dotenv, (NEVER COMMIT).
+    │
+    │── .gitignore  <- Configuration of files that can never be commited.
+    │
+    │── VERSION     <- Contains the reference of the version
+    │
+    └── tox.ini     <- tox file with settings for running tox; see tox.testrun.org
 
 
 --------
