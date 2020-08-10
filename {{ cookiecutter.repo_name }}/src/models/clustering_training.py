@@ -137,8 +137,8 @@ class ClusteringTraining:
     
     Methods
     -------
-    make_data_training_report(name_report=data_training_analysis)
-        Create a html report with the training data
+    create_cluster_sumary()
+        Create a pandas cmap with luster summary
 
     Examples
     --------

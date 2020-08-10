@@ -1,5 +1,7 @@
 import pandas as pd 
 import numpy as np
+from sklearn.model_selection._split import _BaseKFold
+
 
 class ModifiedTimeSeriesSplit(_BaseKFold):
     
