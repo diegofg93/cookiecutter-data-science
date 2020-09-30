@@ -76,6 +76,10 @@ endif
 test_environment:
 	$(PYTHON_INTERPRETER) test_environment.py
 
+## Install the editable version of your own package
+install_editable: test_environment
+	$(PYTHON_INTERPRETER) pip install -e .
+
 #################################################################################
 # PROJECT RULES                                                                 #
 #################################################################################
