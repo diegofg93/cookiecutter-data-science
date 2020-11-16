@@ -6,6 +6,7 @@ include *.yml
 recursive-include ./src/*
 
 include ./requirements.txt
+include VERSION
 exclude *.log
 
 recursive-exclude * __pycache__
