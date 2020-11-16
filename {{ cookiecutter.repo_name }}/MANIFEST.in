@@ -2,6 +2,7 @@ include *.txt
 include *.md
 include *.cfg
 include *.pkl
+include *.yml
 recursive-include ./src/*
 
 include ./requirements.txt
