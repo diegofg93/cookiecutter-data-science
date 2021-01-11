@@ -100,4 +100,19 @@ Project Organization
 
 --------
 
+## Installation
+------------
+
+``` bash
+$ make create_environment
+$ conda activate [environment_name]
+$ make requirements
+$ make install_editable
+```
+
+### Running the tests
+------------
+
+    py.test tests
+------------
 <p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>
