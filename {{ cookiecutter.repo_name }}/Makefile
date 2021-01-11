@@ -78,7 +78,7 @@ test_environment:
 
 ## Install the editable version of your own package
 install_editable: test_environment
-	$(PYTHON_INTERPRETER) pip install -e .
+	$(PYTHON_INTERPRETER) -m pip install -e .
 
 #################################################################################
 # PROJECT RULES                                                                 #

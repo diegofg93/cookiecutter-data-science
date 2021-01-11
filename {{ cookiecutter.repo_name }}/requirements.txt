@@ -9,9 +9,10 @@ dataprep==0.2.15
 hyperopt==0.2.5
 category_encoders==2.2.2
 numpy==1.19.0
-scikit-learn==0.24.0
+scikit-learn==0.23.0
 oauth2client
 mlflow==1.13.1
+psutil==5.7.2
 umap-learn
 python-box
 

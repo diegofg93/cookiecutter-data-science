@@ -7,7 +7,7 @@ Project Organization
 ------------
 
     ├── LICENSE
-    ├── Makefile           <- Makefile with commands like `make data` or `make train`
+    ├── Makefile           <- Makefile with commands for install package as developer or create environment
     ├── README.md          <- The top-level README for developers using this project.
     ├── datasets
     │   ├── external       <- Data from third party sources.
@@ -15,30 +15,33 @@ Project Organization
     │   ├── processed      <- The final, canonical data sets for modeling.
     │   └── raw            <- The original, immutable data dump.
     │
-    ├── docs               <- A default Sphinx project; see sphinx-doc.org for details
+    ├── docs               <- A default Sphinx project; see sphinx-doc.org for details. Creating using MAKEFILE inside owns folder
+    │
+    ├── ml_api             <- An API for serving the model, in very early stage.
     │
     │── logs               <- Folder to save logs generated.
     │
-    │
-    ├── trained_models     <- Trained and serialized models, model predictions, or model summaries
-    │
     ├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
     │                         the creator's initials, and a short `-` delimited description, e.g.
-    │                         `1.0-jqp-initial-data-exploration`.
+    │                         `1.0-jqp-initial-data-exploration`. Furthermore you can find some examples notebooks.
     │
     ├── references         <- Data dictionaries, manuals, and all other explanatory materials.
     │
     ├── reports            <- Generated analysis as HTML, PDF, LaTeX, etc.
     │   └── figures        <- Generated graphics and figures to be used in reporting
     │
-    ├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
-    │                         generated with `pip freeze > requirements.txt`
+    ├── trained_models     <- Trained and serialized models, model predictions, or model summaries
     │
-    ├── setup.py           <- makes project pip installable (pip install -e .) so src can be imported
+    │
+    │
+    ├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
+    │                         generated with `pip freeze > requirements.txt`. You can install from MAKEFILE running make requirements
+    │
+    ├── setup.py           <- makes project pip installable (pip install -e .) so src can be imported, you can install package as editable with: make install_editable 
     ├── src                <- Source code for use in this project.
     │   ├── __init__.py    <- Makes src a Python module
     │   │   
-    │   ├── pipeline.py    <- Contains the configuration of the model pipeline
+    │   ├── pipeline.py    <- Contains the configuration of the model pipeline, like a sklearn pipeline
     │   ├── train_pipeline.py <- Train and generate the model
     │   ├── predict.py     <- Use the trained model for predicting data
     │   │
@@ -87,10 +90,13 @@ Project Organization
     │
     │── .gitignore  <- Configuration of files that can never be commited.
     │
+    │── MAKEFILE contains a bunchs of command for an easy installation 
+    │
+    │── MANIFEST.in When building a source distribution for your package, by default only a minimal set of files are included: https://packaging.python.org/guides/using-manifest-in/
+    │
     │── VERSION     <- Contains the reference of the version
     │
     └── tox.ini     <- tox file with settings for running tox; see tox.readthedocs.io
-
 
 --------
 

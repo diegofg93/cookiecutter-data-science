@@ -14,9 +14,34 @@ prod:
 
 
 train:
-  col_label: "label"
-  cols_to_ignore: ["userid", "date"]
-  
+  col_label: "SalePrice"
+  cols_to_ignore: []
+  numerical_columns: [
+    'MSSubClass',
+    'OverallQual',
+    'OverallCond',
+    '1stFlrSF',
+    'GrLivArea',
+    'BsmtFullBath',
+    'Fireplaces',
+    'GarageCars',
+    'LotFrontage'
+    ]
+  categorical_columns: [
+    'MSZoning',
+    'Neighborhood',
+    'RoofStyle',
+    'MasVnrType',
+    'BsmtQual',
+    'BsmtExposure',
+    'HeatingQC',
+    'CentralAir',
+    'KitchenQual',
+    'FireplaceQu',
+    'GarageType',
+    'GarageFinish',
+    'PavedDrive'
+                      ]
   algorithm_module: "sklearn.linear_model"
   algorithm_name: "Lasso"
   algorithm_params:

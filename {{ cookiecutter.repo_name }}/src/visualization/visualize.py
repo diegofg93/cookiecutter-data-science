@@ -161,7 +161,7 @@ def plot_continuous(df, feature, target, bins=30, figsize=(14, 5)):
     sns.swarmplot(data=df.dropna(), y=feature, x=target, ax=ax[1,1])
     ax[1,1].set_title(f'Swarm plot of {feature} by {target}')
     plt.tight_layout() # To ensure subplots don't overlay
-view raw
+
 # .- regression functions ---------------------------------------------------
 
 
@@ -632,7 +632,7 @@ def classification_model_report_summary(data: pd.core.frame.DataFrame,
         ax4.set_xlim([-0.02, 1.02])
 
         ax5 = plt.subplot(grid[1, 2:])
-        visualize.plot_lift_curve(target, model.predict_proba(data), title='Lift Curve',
+        plot_lift_curve(target, model.predict_proba(data), title='Lift Curve',
                                   ax=ax5, figsize=None, title_fontsize="large",
                                   text_fontsize="medium")
         ax5.set_title("Lift Curve", fontsize='xx-large')
