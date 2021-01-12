@@ -42,12 +42,12 @@ def run_training(experiment_name,
 
     model_subfloder = config.TRAINED_MODEL_DIR/experiment_name
     _logger.info("Creating model folder in {}".format(str(model_subfloder)))
-    os.mkdir(model_subfloder)
 
     if data_profiling:
         _logger.info("Creating a data report for data training")
         profile = ProfileReport(data, title=experiment_name, explorative=True)
-        profile.to_file(model_subfloder / "data_train_report.html")
+        profile.to_file(config.REPORT_DIR / "data_train_report.html")
+        _logger.info("A report in html was saved in {}".format(config.REPORT_DIR))
 
     # divide train and test
     X_train, X_test, y_train, y_test = train_test_split(
@@ -65,9 +65,7 @@ def run_training(experiment_name,
 
     _logger.info(f'saving model version: {_version}')
     save_pipeline(pipeline_to_persist=pipeline.price_pipe)
-    save_pipeline_path(pipeline_to_persist=pipeline.price_pipe,
-                       save_file_name=str(experiment_name) + "/model.pkl")
-
+    
     _logger.info(f'Logs saved on: {config.LOG_DIR}')
 
 

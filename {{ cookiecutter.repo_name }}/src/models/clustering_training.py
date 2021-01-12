@@ -347,7 +347,7 @@ class ClusteringTraining:
             str(self.best_estimator_.get_params())))
 
         logger.info("Save pipeline with best model...")
-        data_management.save_pipeline(
+        data_management.save_pipeline_model(
             pipeline_to_persist=self.best_estimator_, 
             folder=self.output_directory,
             name_pickle="clustering_pipeline")

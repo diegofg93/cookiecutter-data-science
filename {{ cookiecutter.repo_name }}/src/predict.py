@@ -36,7 +36,7 @@ def make_prediction(*, input_data) -> dict:
             f'Predictions: {results}')
 
     except Exception:
-        logging.error("Fatal error in main_job", exc_info=True)
+        _logger.error("Fatal error in main_job", exc_info=True)
 
     return results
 

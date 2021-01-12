@@ -15,6 +15,7 @@ PACKAGE_ROOT = pathlib.Path(src.__file__).parent.parent.resolve()
 TRAINED_MODEL_DIR = PACKAGE_ROOT / 'trained_models'
 DATASET_DIR = PACKAGE_ROOT / 'datasets'
 LOG_DIR = PACKAGE_ROOT / 'logs'
+REPORT_DIR = PACKAGE_ROOT / "reports"
 
 with open(str(PACKAGE_ROOT) +"/src/config/external_configs.yml" , "r") as ymlfile:
     cfg = Box(yaml.safe_load(ymlfile))

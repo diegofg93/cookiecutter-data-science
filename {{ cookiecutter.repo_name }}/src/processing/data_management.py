@@ -51,6 +51,25 @@ def save_pipeline_path(*, save_file_name , pipeline_to_persist) -> None:
     _logger.info(f'saved pipeline: {save_file_name}')
 
 
+def save_pipeline_model(*, pipeline_to_persist, name_pickle, folder) -> None:
+    """Persist the pipeline.
+
+    Saves the versioned model, and overwrites any previous
+    saved models. This ensures that when the package is
+    published, there is only one trained model that can be
+    called, and we know exactly how it was built.
+    """
+
+    # Prepare versioned save file name
+    save_file_name = f'{name_pickle}.pkl'
+    save_path =folder+"/"+save_file_name
+
+    #remove_old_pipelines(files_to_keep=save_file_name)
+    joblib.dump(pipeline_to_persist, save_path)
+    _logger.info(f'saved pipeline: {save_file_name}')
+
+
+
 def load_pipeline(*, file_name: str
                   ) -> Pipeline:
     """Load a persisted pipeline."""
